@@ -4,8 +4,6 @@ const Bootcamp = require('../models/Bootcamp')
 // @route     Get /api/v1/bootcamps
 // @access    Public
 exports.getBootcamps = async (req, res, next) => {
-  // res.status(200).json({ success: true, msg: 'Show all bootcamps' })
-
   try {
     const bootcamps = await Bootcamp.find()
     res
@@ -13,6 +11,7 @@ exports.getBootcamps = async (req, res, next) => {
       .json({ success: true, count: bootcamps.length, data: bootcamps })
   } catch (err) {
     res.status(400).json({ success: false })
+    // next(err)
   }
 }
 
@@ -20,8 +19,6 @@ exports.getBootcamps = async (req, res, next) => {
 // @route     Get /api/v1/bootcamps/:id
 // @access    Public
 exports.getBootcamp = async (req, res, next) => {
-  // res.status(200).json({ success: true, msg: `Get bootcamp ${req.params.id}` })
-
   try {
     const bootcamp = await Bootcamp.findById(req.params.id)
 
@@ -31,8 +28,9 @@ exports.getBootcamp = async (req, res, next) => {
     }
 
     res.status(200).json({ success: true, data: bootcamp })
-  } catch (error) {
-    res.status(400).json({ success: false })
+  } catch (err) {
+    // res.status(400).json({ success: false })
+    next(err)
   }
 }
 
@@ -40,9 +38,6 @@ exports.getBootcamp = async (req, res, next) => {
 // @route     POST /api/v1/bootcamps
 // @access    Private
 exports.createBootcamp = async (req, res, next) => {
-  // console.log(req.body)
-  // res.status(200).json({ success: true, msg: 'Create new bootcamp' })
-
   try {
     const bootcamp = await Bootcamp.create(req.body)
 
@@ -73,10 +68,6 @@ exports.updateBootcamp = async (req, res, next) => {
   } catch (err) {
     res.status(400).json({ success: false })
   }
-
-  // res
-  //   .status(200)
-  //   .json({ success: true, msg: `Update bootcamp ${req.params.id}` })
 }
 
 // @desc      Delete bootcamp
@@ -94,8 +85,4 @@ exports.deleteBootcamp = async (req, res, next) => {
   } catch (err) {
     res.status(400).json({ success: false })
   }
-
-  // res
-  //   .status(200)
-  //   .json({ success: true, msg: `Delete bootcamp ${req.params.id}` })
 }
