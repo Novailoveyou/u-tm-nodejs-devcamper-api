@@ -27,7 +27,7 @@ if (process.env.NODE_ENV === 'development') {
 // Mount routers
 app.use('/api/v1/bootcamps', bootcamps)
 
-// Midleware has to be after after line above
+// Midleware has to be after line above
 app.use(errorHandler)
 
 const PORT = process.env.PORT || 5000
