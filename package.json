@@ -5,7 +5,9 @@
   "main": "app.js",
   "scripts": {
     "start": "SET NODE_ENV=production & node app",
-    "dev": "nodemon app"
+    "dev": "nodemon app",
+    "importData": "node seeder -import",
+    "deleteData": "node seeder -delete"
   },
   "author": "Nover",
   "license": "MIT",
