@@ -61,7 +61,7 @@ exports.getBootcamps = asyncHandler(async (req, res, next) => {
   const pagination = {}
 
   if (endIndex < total) {
-    pagination.limit = limit
+    pagination.limitPerPage = limit
     pagination.totalPages = totalPages
     pagination.next = {
       page: page + 1,
@@ -69,7 +69,7 @@ exports.getBootcamps = asyncHandler(async (req, res, next) => {
   }
 
   if (startIndex > 0) {
-    pagination.limit = limit
+    pagination.limitPerPage = limit
     pagination.totalPages = totalPages
     pagination.prev = {
       page: page - 1,
