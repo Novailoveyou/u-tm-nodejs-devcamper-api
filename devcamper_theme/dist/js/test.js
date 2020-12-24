@@ -3,7 +3,7 @@ const makeReq = async (
   url = '/api/v1/bootcamps',
   headers = {},
   body = {},
-  apiURL = 'http://localhost:5000'
+  apiURL = 'https://ipo-cp.ru'
 ) => {
   const config = {
     method,
@@ -24,5 +24,5 @@ makeReq(
   'POST',
   '/api/v1/auth/login',
   { Accept: 'application/json', 'Content-Type': 'application/json' },
-  { email: 'publisher@gmail.com', password: '123456' },
+  { email: 'nover2@gmail.com', password: '123456' }
 )
