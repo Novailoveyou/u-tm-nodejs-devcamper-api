@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli:wght@400;700&display=swap');
+
+/* General */
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: 'Muli', sans-serif;
+  font-size: 16px;
+  background-color: #181818;
+  color: #fff;
+  min-height: 100%;
+  max-width: 100%;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+/* /General */
+
+/* Utility */
+.h1--form {
+  margin-bottom: 0.4rem;
+}
+
+.text-info {
+  opacity: 0.6;
+  font-style: italic;
+}
+
+.title__subtitle {
+  margin: 0 0 1.6rem 0; /* 0 0 2.4rem 0 */
+}
+/* /Utility */
+
+/* Msg */
+.msg-to-client {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  padding: 1rem;
+  background-color: #202020;
+  border-radius: 1.875rem;
+  transform: translateY(300%);
+  transition: transform 0.4s ease-in-out;
+}
+
+.msg-to-client.show {
+  transform: translateY(0);
+}
+
+/* /Msg */
+
+/* Forms */
+.form {
+  background-color: #202020;
+  padding: 1.25rem 3.125rem;
+  border-radius: 1.875rem;
+  margin: 0 1rem;
+}
+
+.form__title {
+  margin: 0 auto;
+  width: 21.75rem;
+}
+
+@media only screen and (max-width: 500px) {
+  .form {
+    padding: 1rem;
+  }
+  .form__title {
+    width: 12.75rem;
+  }
+}
+
+.form-ctrl {
+  position: relative;
+  margin: 1.25rem 0;
+}
+
+.form-ctrl__label {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  opacity: 0.6;
+  transform: translateY(-50%);
+  transition: opacity 0.3s ease-in-out;
+}
+
+.label__letter {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-ctrl__field:focus + .form-ctrl__label,
+.form-ctrl__field:valid + .form-ctrl__label,
+.form-ctrl__field:invalid:not(:placeholder-shown) + .form-ctrl__label {
+  opacity: 1;
+}
+
+.form-ctrl__field:focus + .form-ctrl__label .label__letter,
+.form-ctrl__field:valid + .form-ctrl__label .label__letter,
+.form-ctrl__field:invalid:not(:placeholder-shown)
+  + .form-ctrl__label
+  .label__letter {
+  transform: translateY(-210%);
+}
+
+.form-ctrl__field {
+  border: 0;
+  display: block;
+  width: 100%;
+  padding: 0.9375rem;
+  font-size: 1.125rem;
+  border-radius: 1rem;
+  background-color: #121212;
+  color: #fff;
+  transition: margin-top 0.3s ease-out;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.form-ctrl__field:focus,
+.form-ctrl__field:valid,
+.form-ctrl__field:invalid:not(:placeholder-shown) {
+  margin-top: 2.4rem;
+}
+
+.form-ctrl__field::placeholder {
+  opacity: 0;
+}
+
+.form-ctrl__field:focus {
+  outline: none;
+  box-shadow: 0 0 1.875rem rgba(0, 0, 0, 0.1);
+}
+
+.form-no-account {
+  margin-top: 1.6rem;
+}
+
+/* /Forms */
+
+/* Buttons */
+.btn {
+  position: relative;
+  width: 100%;
+  padding: 0.9375rem;
+  font-family: inherit;
+  font-size: 1rem;
+  border: 0;
+  border-radius: 1rem;
+  background-color: #313131;
+  color: #fff;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:focus,
+.link-alpha:focus {
+  outline: none;
+}
+
+.btn:focus-visible,
+.btn:hover {
+  box-shadow: 0 0 1.875rem rgba(255, 215, 0, 0.04);
+}
+
+.btn__circle,
+.btn:focus-visible::before,
+.btn:focus-visible::after {
+  content: 'test';
+  width: 6.25rem;
+  height: 6.25rem;
+  position: absolute;
+  top: 1.6875rem;
+  left: 5.125rem;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation-name: btn-circle-scale;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  background-color: #fff;
+}
+
+.btn:focus-visible::after {
+  left: 12.125rem;
+}
+
+@keyframes btn-circle-scale {
+  to {
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
+  }
+}
+
+.link-alpha {
+  text-decoration: none;
+  color: #fff;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.link-alpha:hover,
+.link-alpha:focus {
+  text-decoration: underline;
+}
+/* /Buttons */
