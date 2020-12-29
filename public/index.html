@@ -8,32 +8,42 @@
   <title>Form Input Wave</title>
 </head>
 <body>
-
-  <a id='test1'>test1</a>
-  <div id="msg-to-client" class="msg-to-client"></div>
-
-  <form class="form">
-    <div class="form__title">
-      <h1 class="h1 h1--form">Пожалуйста, Войдите</h1>
-      <p class="text-info title__subtitle">в свою учётную запись</p>
+  <header>
+    <div class="container">
+      <a class="logo" href="./">
+        <img class="logo__img" src="./img/logo.png" alt="ИПО Лого" height="auto" width="66px">
+        <h2 class="logo__text">Институт <br /> Профессионального <br /> Образования</h2>
+      </a>
     </div>
-    <div class="form-ctrl">
-      <input id="user-email" class="form-ctrl__field" type="email" name="email" placeholder="Email" required>
-      <label class="form-ctrl__label" for="user-email">Почта</label>
-    </div>
+  </header>
 
-    <div class="form-ctrl">
-      <input id="user-password" class="form-ctrl__field" type="password" name="password" placeholder="Password" required>
-      <label class="form-ctrl__label" for="user-password">Пароль</label>
-    </div>
+  <main>
+    <a id='get-me'>test1</a>
+    <div id="msg-to-client" class="msg-to-client"></div>
 
-    <button id="login" class="btn btn--form btn-ripple" type="submit">Войти</button>
+    <form class="form">
+      <div class="form__title">
+        <h1 class="h1 h1--form">Пожалуйста, Войдите</h1>
+        <p class="text-info title__subtitle">в свою учётную запись</p>
+      </div>
+      <div class="form-ctrl">
+        <input id="user-email" class="form-ctrl__field" type="email" name="email" placeholder="Email" required>
+        <label class="form-ctrl__label" for="user-email">Почта</label>
+      </div>
 
-    <p class="form-no-account">
-      <span class="text-info">Нет аккаунта?</span>
-      <a id="register-now" class="link-alpha" href="#!">Создайте сейчас</a>
-    </p>
-  </form>
+      <div class="form-ctrl">
+        <input id="user-password" class="form-ctrl__field" type="password" name="password" placeholder="Password" required>
+        <label class="form-ctrl__label" for="user-password">Пароль</label>
+      </div>
+
+      <button id="login" class="btn btn--form btn-ripple" type="submit">Войти</button>
+
+      <p class="form-no-account">
+        <span class="text-info">Нет аккаунта?</span>
+        <a id="register-now" class="link-alpha" href="#!">Создайте сейчас</a>
+      </p>
+    </form>
+  </main>
 
   <script src="script.js"></script>
 </body>

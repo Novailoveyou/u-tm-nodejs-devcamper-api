@@ -66,7 +66,7 @@ const makeReq = async (
     const data = await res.json()
     return data
   } catch (err) {
-    return err
+    return err 
   }
 }
 
@@ -132,8 +132,8 @@ addRipplesToBtns(btnsRipple)
 
 loginBtn.addEventListener('click', loginUser)
 
-const test1 = document.getElementById('test1')
-test1.addEventListener('click', getMe)
+const getMeBtn = document.getElementById('get-me')
+getMeBtn.addEventListener('click', getMe)
 
 // data.ipo.programs
 // data.vyshka.programs
