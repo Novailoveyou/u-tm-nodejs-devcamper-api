@@ -6,26 +6,44 @@ const CourseSchema = new mongoose.Schema({
     trim: true,
     required: [true, 'Please add a course title'],
   },
+  uni: {
+    type: String,
+    required: [true, 'Please add Uni'],
+  },
+  level: {
+    type: String,
+    required: [true, 'Please add level'],
+    enum: ['Специалитет', 'Магистратура', 'Бакалавриат', 'MBA', 'ИПО'],
+  },
   description: {
     type: String,
     required: [true, 'Please add a description'],
   },
-  weeks: {
+  price: {
     type: String,
-    required: [true, 'Please add number of weeks'],
+    required: [true, 'Please add price'],
   },
-  tuition: {
-    type: Number,
-    required: [true, 'Please add a tuition cost'],
-  },
-  minimumSkill: {
+  priceDisc: {
     type: String,
-    required: [true, 'Please add a minimum skill'],
-    enum: ['beginner', 'intermediate', 'advanced'],
+    required: [true, 'Please add priceDisc'],
   },
-  scholarshipAvailable: {
-    type: Boolean,
-    default: false,
+  priceGroup: {
+    type: String,
+    required: [true, 'Please add priceDisc'],
+    enum: ['test', 'test2'],
+  },
+  trainingPeriodFrom: {
+    type: String,
+    required: [true, 'Please add trainingPeriod'],
+  },
+  trainingPeriodTo: {
+    type: String,
+    required: [true, 'Please add trainingPeriod'],
+  },
+  url: {
+    type: String,
+    required: [true, 'Please add url'],
+    unique: true,
   },
   createdAt: {
     type: Date,
