@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css">
+  <title>Form Input Wave</title>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a class="logo" href="./">
+        <img class="logo__img" src="./img/logo.png" alt="ИПО Лого" height="auto" width="66px">
+        <h2 class="logo__text">Институт <br /> Профессионального <br /> Образования</h2>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <a id='get-me'>test1</a>
+    <div id="msg-to-client" class="msg-to-client"></div>
+
+    <form class="form">
+      <div class="form__title">
+        <h1 class="h1 h1--form">Пожалуйста, Войдите</h1>
+        <p class="text-info title__subtitle">в свою учётную запись</p>
+      </div>
+      <div class="form-ctrl">
+        <input id="user-email" class="form-ctrl__field" type="email" name="email" placeholder="Email" required>
+        <label class="form-ctrl__label" for="user-email">Почта</label>
+      </div>
+
+      <div class="form-ctrl">
+        <input id="user-password" class="form-ctrl__field" type="password" name="password" placeholder="Password" required>
+        <label class="form-ctrl__label" for="user-password">Пароль</label>
+      </div>
+
+      <button id="login" class="btn btn--form btn-ripple" type="submit">Войти</button>
+
+      <p class="form-no-account">
+        <span class="text-info">Нет аккаунта?</span>
+        <a id="register-now" class="link-alpha" href="#!">Создайте сейчас</a>
+      </p>
+    </form>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

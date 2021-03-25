@@ -6,40 +6,61 @@ const CourseSchema = new mongoose.Schema({
     trim: true,
     required: [true, 'Please add a course title'],
   },
-  uni: {
+  titleEng: {
     type: String,
-    required: [true, 'Please add Uni'],
   },
-  level: {
+  picture: {
     type: String,
-    required: [true, 'Please add level'],
-    enum: ['Специалитет', 'Магистратура', 'Бакалавриат', 'MBA', 'ИПО'],
+    default: 'no-photo.jpg',
   },
-  description: {
+  mbaFormat: {
     type: String,
-    required: [true, 'Please add a description'],
+    // required: [true, 'Please specify format of course: online or blended'],
+    enum: ['online', 'blended'],
   },
-  price: {
+  mbaTypeOfProgram: {
     type: String,
-    required: [true, 'Please add price'],
+    // required: [
+    //   true,
+    //   'Please specify type of course: "mini mba", "professional mba" or "industry mba" ',
+    // ],
+    enum: ['mini', 'professional', 'industry'],
   },
-  priceDisc: {
+  goalsOfProgram: {
     type: String,
-    required: [true, 'Please add priceDisc'],
+    // required: [true, 'Please add a description'],
   },
-  priceGroup: {
-    type: String,
-    required: [true, 'Please add priceDisc'],
-    enum: ['test', 'test2'],
+  whatWillYouLearn: {
+    type: [String],
+    // required: [true, 'Please add whatWillYouLearn'],
   },
-  trainingPeriodFrom: {
-    type: String,
-    required: [true, 'Please add trainingPeriod'],
-  },
-  trainingPeriodTo: {
-    type: String,
-    required: [true, 'Please add trainingPeriod'],
-  },
+
+  // level: {
+  //   type: String,
+  //   required: [true, 'Please add level'],
+  //   enum: ['Специалитет', 'Магистратура', 'Бакалавриат', 'MBA', 'ИПО'],
+  // },
+  // price: {
+  //   type: String,
+  //   required: [true, 'Please add price'],
+  // },
+  // priceDisc: {
+  //   type: String,
+  //   required: [true, 'Please add priceDisc'],
+  // },
+  // priceGroup: {
+  //   type: String,
+  //   required: [true, 'Please add priceDisc'],
+  //   enum: ['test', 'test2'],
+  // },
+  // trainingPeriodFrom: {
+  //   type: String,
+  //   required: [true, 'Please add trainingPeriod'],
+  // },
+  // trainingPeriodTo: {
+  //   type: String,
+  //   required: [true, 'Please add trainingPeriod'],
+  // },
   url: {
     type: String,
     required: [true, 'Please add url'],
