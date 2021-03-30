@@ -64,6 +64,10 @@ const CourseSchema = new mongoose.Schema({
   url: {
     type: String,
     required: [true, 'Please add url'],
+  },
+  uniqueUrl: {
+    type: String,
+    required: [true, 'Please add url'],
     unique: true,
   },
   createdAt: {
