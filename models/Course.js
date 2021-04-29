@@ -34,6 +34,10 @@ const CourseSchema = new mongoose.Schema({
     type: [String],
     // required: [true, 'Please add whatWillYouLearn'],
   },
+  specializedSubjects: {
+    type: [String],
+    // required: [true, 'Please add whatWillYouLearn'],
+  },
 
   // level: {
   //   type: String,
