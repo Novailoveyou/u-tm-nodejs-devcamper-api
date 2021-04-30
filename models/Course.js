@@ -38,6 +38,10 @@ const CourseSchema = new mongoose.Schema({
     type: [String],
     // required: [true, 'Please add whatWillYouLearn'],
   },
+  showInMenu: {
+    type: Boolean,
+    default: true,
+  },
 
   // level: {
   //   type: String,
