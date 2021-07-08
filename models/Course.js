@@ -24,7 +24,7 @@ const CourseSchema = new mongoose.Schema({
     //   true,
     //   'Please specify type of course: "mini mba", "professional mba" or "industry mba" ',
     // ],
-    enum: ['mini', 'professional', 'industry'],
+    enum: ['mini', 'professional', 'industry', 'profession'],
   },
   goalsOfProgram: {
     type: String,
@@ -36,7 +36,19 @@ const CourseSchema = new mongoose.Schema({
   },
   specializedSubjects: {
     type: [String],
+    default: undefined
     // required: [true, 'Please add whatWillYouLearn'],
+  },
+  description: {
+    type: String
+  },
+  suitsForTitle: {
+    type: [String],
+    default: undefined
+  },
+  suitsForDesc: {
+    type: [String],
+    default: undefined
   },
   showInMenu: {
     type: Boolean,
