@@ -4,19 +4,19 @@ const CourseSchema = new mongoose.Schema({
   title: {
     type: String,
     trim: true,
-    required: [true, 'Please add a course title'],
+    required: [true, 'Please add a course title']
   },
   titleEng: {
-    type: String,
+    type: String
   },
   picture: {
     type: String,
-    default: 'no-photo.jpg',
+    default: 'no-photo.jpg'
   },
   mbaFormat: {
     type: String,
     // required: [true, 'Please specify format of course: online or blended'],
-    enum: ['online', 'blended'],
+    enum: ['online', 'blended']
   },
   mbaTypeOfProgram: {
     type: String,
@@ -24,14 +24,14 @@ const CourseSchema = new mongoose.Schema({
     //   true,
     //   'Please specify type of course: "mini mba", "professional mba" or "industry mba" ',
     // ],
-    enum: ['mini', 'professional', 'industry', 'profession'],
+    enum: ['mini', 'professional', 'industry', 'profession']
   },
   goalsOfProgram: {
-    type: String,
+    type: String
     // required: [true, 'Please add a description'],
   },
   whatWillYouLearn: {
-    type: [String],
+    type: [String]
     // required: [true, 'Please add whatWillYouLearn'],
   },
   specializedSubjects: {
@@ -52,7 +52,7 @@ const CourseSchema = new mongoose.Schema({
   },
   showInMenu: {
     type: Boolean,
-    default: true,
+    default: true
   },
   price: {
     type: String,
@@ -60,7 +60,12 @@ const CourseSchema = new mongoose.Schema({
   },
   field: {
     type: String,
-    enum: ['Управление персоналом', 'Документоведение и делопроизводство', 'Государственное и муниципальное управление', 'Бухгалтерский учет, анализ и аудит'],
+    enum: [
+      'Управление персоналом',
+      'Документоведение и делопроизводство',
+      'Государственное и муниципальное управление',
+      'Бухгалтерский учет, анализ и аудит'
+    ],
     default: undefined
   },
   durationH: {
@@ -70,7 +75,7 @@ const CourseSchema = new mongoose.Schema({
   minStudyTimeM: {
     type: Number,
     default: undefined
-  }
+  },
 
   // level: {
   //   type: String,
@@ -100,7 +105,7 @@ const CourseSchema = new mongoose.Schema({
   // },
   url: {
     type: String,
-    required: [true, 'Please add url'],
+    required: [true, 'Please add url']
   },
   // uniqueUrl: {
   //   type: String,
@@ -108,37 +113,37 @@ const CourseSchema = new mongoose.Schema({
   // },
   createdAt: {
     type: Date,
-    default: Date.now,
+    default: Date.now
   },
   bootcamp: {
     type: mongoose.Schema.ObjectId,
     ref: 'Bootcamp',
-    required: true,
+    required: true
   },
   user: {
     type: mongoose.Schema.ObjectId,
     ref: 'User',
-    required: true,
-  },
+    required: true
+  }
 })
 
 // Static method to get avg of course tuitions
 CourseSchema.statics.getAverageCost = async function (bootcampId) {
   const obj = await this.aggregate([
     {
-      $match: { bootcamp: bootcampId },
+      $match: { bootcamp: bootcampId }
     },
     {
       $group: {
         _id: '$bootcamp',
-        averageCost: { $avg: '$tuition' },
-      },
-    },
+        averageCost: { $avg: '$tuition' }
+      }
+    }
   ])
 
   try {
     await this.model('Bootcamp').findByIdAndUpdate(bootcampId, {
-      averageCost: Math.ceil(obj[0].averageCost / 10) * 10,
+      averageCost: Math.ceil(obj[0].averageCost / 10) * 10
     })
   } catch (err) {
     console.error(err)
