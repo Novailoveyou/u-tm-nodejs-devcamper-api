@@ -55,17 +55,21 @@ const CourseSchema = new mongoose.Schema({
     default: true,
   },
   price: {
-    type: String
+    type: String,
+    default: undefined
   },
   field: {
     type: String,
-    enum: ['Управление персоналом', 'Документоведение и делопроизводство', 'Государственное и муниципальное управление', 'Бухгалтерский учет, анализ и аудит']
+    enum: ['Управление персоналом', 'Документоведение и делопроизводство', 'Государственное и муниципальное управление', 'Бухгалтерский учет, анализ и аудит'],
+    default: undefined
   },
   durationH: {
-    type: String
+    type: Number,
+    default: undefined
   },
   minStudyTimeM: {
-    type: String
+    type: Number,
+    default: undefined
   }
 
   // level: {
