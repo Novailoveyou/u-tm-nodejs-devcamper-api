@@ -39,6 +39,11 @@ const CourseSchema = new mongoose.Schema({
     default: undefined
     // required: [true, 'Please add whatWillYouLearn'],
   },
+  baseSubjects: {
+    type: [String],
+    default: undefined
+    // required: [true, 'Please add whatWillYouLearn'],
+  },
   description: {
     type: String
   },
